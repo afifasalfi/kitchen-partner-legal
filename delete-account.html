@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitchen Partner – Delete your account</title>
+<style>
+  :root { --cream:#FFFBF2; --paper:#FFFEF9; --ink:#302E26; --muted:#706D60; --line:#E7E0D0; --tomato:#AE3F2B; --leaf:#355E43; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--cream); color:var(--ink); font:18px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Devanagari", sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
+  header { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  h1 { font-size: 28px; line-height:1.25; margin: 8px 0; flex: 1 1 auto; }
+  h2 { font-size: 19px; margin: 0 0 6px; }
+  section { background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:16px; margin:12px 0; }
+  p { margin:0; }
+  .muted { color:var(--muted); font-size:15px; }
+  .lang { display:flex; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  .lang button { border:0; background:var(--paper); padding:8px 14px; font-size:16px; font-weight:700; cursor:pointer; color:var(--ink); }
+  .lang button[aria-pressed="true"] { background:var(--leaf); color:#fff; }
+  a { color:var(--tomato); }
+  [lang="hi"] { line-height:1.75; }
+  .hidden { display:none; }
+</style>
+</head>
+<body>
+<main>
+<div data-lang="en" lang="en">
+<header><h1>Kitchen Partner: Delete your account</h1><div class="lang" role="group" aria-label="Language"><button type="button" value="en">EN</button><button type="button" value="hi" lang="hi">हिं</button></div></header>
+<p>You can delete your Kitchen Partner account and your data at any time.</p>
+<section><h2>From the app</h2><p>Open Kitchen Partner, go to More, tap Delete my account, and confirm. It’s done straight away.</p></section>
+<section><h2>Without the app</h2><p>Email <a href="mailto:support@pearlsvalleyacademy.com">support@pearlsvalleyacademy.com</a> from the Gmail address you sign in with, with the subject “Delete my account”. We’ll delete it within 7 days and let you know by email.</p></section>
+<section><h2>What gets deleted</h2><p>Your account, your name and email, and your household’s menus, lists, pantry, helpers, budget, reminders and delivery log. If family members share your kitchen, the shared kitchen stays with them; only your account is removed.</p></section>
+<section><h2>How long it takes</h2><p>In the app, straight away. Copies in our provider’s backups disappear within 30 days.</p></section>
+<p class="muted"><a href="./">Privacy policy</a></p>
+</div>
+<div data-lang="hi" lang="hi">
+<header><h1>किचन पार्टनर: अपना अकाउंट डिलीट करें</h1><div class="lang" role="group" aria-label="Language"><button type="button" value="en">EN</button><button type="button" value="hi" lang="hi">हिं</button></div></header>
+<p>आप कभी भी अपना किचन पार्टनर अकाउंट और अपना डेटा डिलीट कर सकती हैं।</p>
+<section><h2>ऐप से</h2><p>किचन पार्टनर खोलें, ‘और’ टैब में जाएँ, ‘मेरा अकाउंट डिलीट करें’ दबाएँ और पक्का करें। यह तुरंत हो जाता है।</p></section>
+<section><h2>ऐप के बिना</h2><p>जिस Gmail से आप साइन इन करती हैं, उससे <a href="mailto:support@pearlsvalleyacademy.com">support@pearlsvalleyacademy.com</a> पर “Delete my account” विषय के साथ ईमेल भेजें। हम 7 दिन के अंदर अकाउंट डिलीट करके ईमेल से बता देंगे।</p></section>
+<section><h2>क्या-क्या डिलीट होगा</h2><p>आपका अकाउंट, आपका नाम और ईमेल, और आपके घर के मेन्यू, लिस्ट, घर का सामान, मदद करने वाले, बजट, याद दिलाने वाली बातें और डिलीवरी का हिसाब। अगर परिवार के सदस्य आपकी रसोई शेयर करते हैं, तो शेयर की हुई रसोई उनके पास रहेगी; सिर्फ़ आपका अकाउंट हटेगा।</p></section>
+<section><h2>कितना समय लगता है</h2><p>ऐप से तुरंत। हमारी सर्विस कंपनी के बैकअप से कॉपी 30 दिन के अंदर मिट जाती है।</p></section>
+<p class="muted"><a href="./">गोपनीयता नीति</a></p>
+</div>
+</main>
+<script>
+  // English / Hindi switch; starts in Hindi if the phone is set to Hindi.
+  function show(l) {
+    document.querySelectorAll('[data-lang]').forEach(function (el) { el.classList.toggle('hidden', el.getAttribute('data-lang') !== l) })
+    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.value === l)) })
+    document.documentElement.lang = l
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { show(b.value) }) })
+  show((navigator.language || '').slice(0, 2) === 'hi' ? 'hi' : 'en')
+</script>
+</body>
+</html>
